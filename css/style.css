@@ -1,17 +1,16 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Abolition Regular';
-  src: url('../fonts/abolition-regular-webfont.eot');
-  src: url('../fonts/abolition-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/abolition-regular-webfont.woff') format('woff'),
-       url('../fonts/abolition-regular-webfont.ttf') format('truetype');
+  src: url("../fonts/abolition-regular-webfont.eot");
+  src: url("../fonts/abolition-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/abolition-regular-webfont.woff") format("woff"), url("../fonts/abolition-regular-webfont.ttf") format("truetype");
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
-  color: #878787;
   margin: 0;
   font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -32,9 +31,9 @@ body {
   background-color: #0f3336;
 }
 
-.longbutton {
-  width:100%;
-  height:50px;
+.button__long {
+  width: 100%;
+  height: 50px;
 }
 
 h1,
@@ -42,29 +41,22 @@ h2 {
   font-family: 'Abolition Regular', Helvetica, Arial, sans-serif;
 }
 
-h1 {  
-  font-size: 90px; 
-  color: rgba(0, 0, 0, 1);
+h1 {
+  font-size: 90px;
+  color: black;
   text-transform: uppercase;
   font-weight: normal;
-  line-height: 1.3; 
-  text-shadow: 0 1px 1px rgba(0,0,0,.8);
+  line-height: 1.3;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
   margin: 12px 0 0;
 }
 
 h2 {
-  color: rgba(50, 50, 50, 1);
+  color: #323232;
   font-size: 53px;
   font-weight: normal;
   line-height: 1.1;
   margin: 0 0 26px;
-}
-
-h3 {
-  font-size: 20px;
-  color: #48525c;
-  line-height: 1.2;
-  margin-bottom: 34px;
 }
 
 img {
@@ -83,7 +75,7 @@ li {
 }
 
 a:link {
-  color: rgb(255, 169, 73);
+  color: #ffa949;
   text-decoration: none;
 }
 
@@ -92,7 +84,7 @@ a:visited {
 }
 
 a:hover {
-  color: rgba(255, 169, 73, .4);
+  color: rgba(255, 169, 73, 0.4);
 }
 
 a:active {
@@ -102,21 +94,18 @@ a:active {
 .main-header {
   padding-top: 170px;
   height: 400px;
-  
-  background: linear-gradient(#ffa949, transparent 90%),
-              linear-gradient(to top, #fff, transparent),
-              #ffa949 url('../img/mountains.jpg') no-repeat center;
-  
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffa949), color-stop(90%, transparent)), -webkit-gradient(linear, left bottom, left top, from(#fff), to(transparent)), #ffa949 url("../img/mountains.jpg") no-repeat center;
+  background: linear-gradient(#ffa949, transparent 90%), linear-gradient(to top, #fff, transparent), #ffa949 url("../img/mountains.jpg") no-repeat center;
   background-size: cover;
 }
 
 .contact-border {
   border: 2px solid darkgrey;
   border-radius: 8px;
-
 }
+
 header .contact-content h2 {
-  color:#80A503;
+  color: #80A503;
 }
 
 .contact-content {
@@ -141,7 +130,7 @@ header .contact-content h2 {
 
 .intro {
   font-size: 26;
-  line-height: 1.6;  
+  line-height: 1.6;
 }
 
 .primary-content,
@@ -151,13 +140,13 @@ header .contact-content h2 {
 }
 
 .primary-content {
-	padding-top: 25px;
+  padding-top: 25px;
   padding-bottom: 95px;
 }
 
 .secondary-content {
-	padding-top: 80px;
-	padding-bottom: 70px;
+  padding-top: 80px;
+  padding-bottom: 70px;
   border-bottom: 2px solid #dfe2e6;
 }
 
@@ -171,7 +160,7 @@ header .contact-content h2 {
   border-top: 2px solid #dfe2e6;
 }
 
-.primary-content, 
+.primary-content,
 .secondary-content {
   width: 75%;
   padding-left: 50px;
@@ -186,9 +175,10 @@ header .contact-content h2 {
   padding: 18% 24%;
   border-top: 10px solid #ffa949;
   margin: 105px 0 60px;
-  background: #434a52 url('../img/bear.jpg') no-repeat center;
+  background: #434a52 url("../img/bear.jpg") no-repeat center;
   background-size: cover;
-  box-shadow: inset 0 0 50px 10px rgba(0,0,0, .8);
+  -webkit-box-shadow: inset 0 0 50px 10px rgba(0, 0, 0, 0.8);
+          box-shadow: inset 0 0 50px 10px rgba(0, 0, 0, 0.8);
   border-radius: 10px;
 }
 
@@ -196,7 +186,6 @@ header .contact-content h2 {
   width: 50px;
   margin-top: 150px;
 }
-
 
 .resorts,
 .tips {
@@ -227,34 +216,33 @@ header .contact-content h2 {
   padding-right: 70px;
 }
 
-
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px; 
+  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-
 .modal-content {
-  padding-right:5px;
+  padding-right: 5px;
   position: relative;
   background-color: #fefefe;
   margin: auto;
   border: 1px solid #888;
   width: 55%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
-  overflow-x:hidden;
+  overflow-x: hidden;
   overflow-y: scroll;
   height: 90%;
 }
@@ -273,13 +261,25 @@ header .contact-content h2 {
 }
 
 @-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .close {
@@ -290,14 +290,16 @@ header .contact-content h2 {
   position: relative;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
-.modal-body {padding: 2px 16px; height: 800px;}
+.modal-body {
+  padding: 2px 16px;
+  height: 800px;
+}
 
 .modal-footer {
   padding: 2px 16px;
@@ -306,13 +308,12 @@ header .contact-content h2 {
 }
 
 /* Innentől a form CSS */
-
 form {
-  padding-top:20px;
+  padding-top: 20px;
 }
 
-input[type=text],input[type=tel],input[type=email], select, textarea {
-  color:black;
+input[type=text], input[type=tel], input[type=email], select, textarea {
+  color: black;
   width: 100%;
   padding: 12px;
   border: 1px solid black;
@@ -320,14 +321,14 @@ input[type=text],input[type=tel],input[type=email], select, textarea {
   resize: vertical;
 }
 
-input[type=text]:hover, input[type=tel]:hover,input[type=email]:hover, select:hover, textarea:hover {
+input[type=text]:hover, input[type=tel]:hover, input[type=email]:hover, select:hover, textarea:hover {
   border: 1px solid #2d7e85;
 }
 
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
-  color:black;
+  color: black;
 }
 
 input[type=submit] {
@@ -347,12 +348,12 @@ input[type=submit]:hover {
 .col-50-left {
   float: left;
   width: 49%;
-  padding:0px;
+  padding: 0px;
 }
 
 .col-50-right {
   float: right;
   width: 49%;
-  padding:0px;
+  padding: 0px;
 }
-
+/*# sourceMappingURL=style.css.map */

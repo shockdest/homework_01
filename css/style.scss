@@ -1,0 +1,212 @@
+// Variables
+
+$button_color: #17494d;
+$button_hover_color: #0f3336;
+$text_color: #192627;
+
+// Fonts
+@font-face {
+  font-family: 'Abolition Regular';
+  src: url('../fonts/abolition-regular-webfont.eot');
+  src: url('../fonts/abolition-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/abolition-regular-webfont.woff') format('woff'),
+       url('../fonts/abolition-regular-webfont.ttf') format('truetype');
+}
+//Site
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media(min-width:468px){
+  .container {
+    justify-content: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    display:flex;
+  }
+}
+
+.button {
+  background-color: $button_color;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 45px 2px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $button_hover_color;
+  }
+}
+
+.button__long {
+  flex-basis:100%;
+  height:50px;
+}
+
+h2 {
+  font-family: 'Abolition Regular', Helvetica, Arial, sans-serif;
+  color: $text_color;
+  font-size: 53px;
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0 0 26px;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.contact-border {
+  border: 2px solid darkgrey;
+  border-radius: 8px;
+}
+
+.contact-content {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 95px;
+  flex-basis: 400px;
+  height: 400px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
+}
+
+.contact-title {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.contact-secondary-title {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  flex-basis: 100%;
+  height: 100%;
+  background-color: $text_color;
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal-content {
+  padding-right:5px;
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  flex-basis: 55%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  overflow-x:hidden;
+  overflow-y: scroll;
+  height: 90%;
+}
+
+.modal-close {
+  background-color: #fefefe;
+  margin: auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  flex-basis: 55%;
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.close {
+  color: $text_color;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  &:hover, &:focus{
+    color: $text_color;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.modal-body {padding: 2px 16px; height: 800px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Innentől a form CSS */
+
+form {
+  padding-top:20px;
+}
+
+input[type=text],input[type=tel],input[type=email], select, textarea {
+  color:$text_color;
+  flex-basis: 100%;
+  padding: 12px;
+  border: 1px solid $text_color;
+  border-radius: 0px;
+  resize: vertical;
+}
+
+input[type=text]:hover, input[type=tel]:hover,input[type=email]:hover, select:hover, textarea:hover {
+  border: 1px solid #2d7e85; // egy szín miatt fölöslegesnek találtam változót csinálni rá
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  color:$text_color;
+}
+
+input[type=submit] {
+  background-color: $button_color;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  float: right;
+
+  &:hover{
+    background-color: $button_hover_color;
+  }
+}
+
+.col-50-left {
+  flex-basis: 49%;
+}
+
+.col-50-right {
+  flex-basis: 49%;
+}
+
