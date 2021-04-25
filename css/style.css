@@ -15,8 +15,8 @@ body {
   font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-@media screen and (max-width: 1200px) {
-  .item {
+@media screen and (max-width: 1000px) {
+  .form-control {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column wrap;
@@ -24,13 +24,9 @@ body {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
-  .form-control.error {
+  .item {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
   }
 }
 
@@ -81,14 +77,6 @@ h2 {
   font-weight: normal;
   line-height: 1.1;
   margin: 0 0 26px;
-}
-
-.main-header {
-  padding-top: 170px;
-  height: 400px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffa949), color-stop(90%, transparent)), -webkit-gradient(linear, left bottom, left top, from(#fff), to(transparent)), #ffa949 url("../img/mountains.jpg") no-repeat center;
-  background: linear-gradient(#ffa949, transparent 90%), linear-gradient(to top, #fff, transparent), #ffa949 url("../img/mountains.jpg") no-repeat center;
-  background-size: cover;
 }
 
 .contact-border {
