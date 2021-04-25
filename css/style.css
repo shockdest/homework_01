@@ -15,6 +15,30 @@ body {
   font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+@media screen and (max-width: 1200px) {
+  .item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .form-control.error {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+}
+
+.item {
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+}
+
 .button {
   background-color: #17494d;
   border: none;
@@ -217,22 +241,23 @@ input[type=submit]:hover {
   background-color: #0f3336;
 }
 
-.col-50-left {
-  float: left;
-  width: 49%;
-  padding: 0px;
-}
-
-.col-50-right {
-  float: right;
-  width: 49%;
-  padding: 0px;
-}
-
 .form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
   margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
 }
 
 .form-control label {

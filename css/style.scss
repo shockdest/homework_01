@@ -21,6 +21,19 @@ body {
   font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+@media screen and (max-width: 1200px) {
+  .item{
+    flex-flow:column wrap;
+    flex-basis: 100%;
+  }
+  .form-control.error{
+    flex-basis: 100%;
+    flex-flow:column wrap;
+  }
+}
+.item{
+  flex-basis: 49%;
+}
 .button {
   background-color: $button_color;
   border: none;
@@ -222,22 +235,15 @@ input[type=submit]:hover {
   background-color: $hover_color;
 }
 
-.col-50-left {
-  float: left;
-  width: 49%;
-  padding: 0px;
-}
-
-.col-50-right {
-  float: right;
-  width: 49%;
-  padding: 0px;
-}
-
 .form-control {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style: none;
 	margin-bottom: 10px;
 	padding-bottom: 20px;
 	position: relative;
+  flex-basis:49%;
   label{
     display: inline-block;
 	margin-bottom: 5px;
@@ -270,7 +276,6 @@ input[type=submit]:hover {
 .form-control.error input, .form-control.error textarea, .form-control.error select{
 	border-color: $warning_color;
 }
-
 
 .form-control i {
 	visibility: hidden;
