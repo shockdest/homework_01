@@ -27,6 +27,9 @@ const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const cname = document.getElementById('cname');
 const employees = document.getElementById('employees');
+// const radio1 = document.getElementById('yes');
+// const radio2 = document.getElementById('no');
+
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -36,13 +39,15 @@ form.addEventListener('submit', e => {
 
 function checkInputs() {
 	// trim to remove the whitespaces
-	const emailValue = email.value.trim();
+  const emailValue = email.value.trim();
   const message1Value = message1.value.trim();
-	const fnameValue = fname.value.trim();
-	const lnameValue = lname.value.trim();
+  const fnameValue = fname.value.trim();
+  const lnameValue = lname.value.trim();
   const cnameValue = cname.value.trim();
-	const employeesValue = employees.value.trim();
+  const employeesValue = employees.value.trim();
   const phonenumberValue = phonenumber.value.trim();
+  // const radio1Value = radio1.value.trim();
+  // const radio2Value = radio2.value.trim();
 
 	if(emailValue === '') {
 		setErrorFor(email, 'Please enter your email address');
@@ -87,6 +92,17 @@ function checkInputs() {
 	} else{
 		setSuccessFor(phonenumber);
 	}
+	/* if(radio1Value.checked = true) {
+		setErrorFor(radio1, 'yes?');
+	} else{
+		setSuccessFor(radio1);
+	}
+	if(radio2Value.checked = false) {
+		setErrorFor(radio2, 'no?');
+	} else{
+		setSuccessFor(radio2);
+	}
+	*/
 
 }
 
