@@ -22,7 +22,7 @@ body {
   margin: 0;
   font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-@media(min-width:468px){
+@media(min-width:768px){
   .form-control {
     justify-content: center;
     padding-left: 70px;
@@ -32,6 +32,13 @@ body {
     margin-bottom: 10px;
 	  padding-bottom: 20px;
 	  position: relative;
+    flex-direction: column;
+  }
+}
+
+@media(min-width:700px){
+  .col-50-left,.col-50-right {
+    flex-direction: column;
   }
 }
 
@@ -161,10 +168,6 @@ img {
 
 /* Innentől a form CSS */
 
-form {
-  padding-top:20px;
-}
-
 input[type=text],input[type=tel],input[type=email], select, textarea {
   color:$text_color;
   flex-basis: 100%;
@@ -197,16 +200,7 @@ input[type=submit] {
     background-color: $button_hover_color;
   }
 }
-
-.col-50-left {
-  flex-basis: 49%;
-  flex:2;
-}
-
-.col-50-right {
-  flex-basis: 49%;
-  flex:2;
-}
+// új kód
 
 .form {
 	padding: 30px 40px;	
@@ -267,17 +261,4 @@ input[type=submit] {
 
 .form-control.error small {
 	visibility: visible;
-}
-
-.form button {
-	background-color: #8e44ad;
-	border: 2px solid #8e44ad;
-	border-radius: 4px;
-	color: #fff;
-	display: block;
-	font-family: inherit;
-	font-size: 16px;
-	padding: 10px;
-	margin-top: 20px;
-	width: 100%;
 }

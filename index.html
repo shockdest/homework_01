@@ -22,48 +22,33 @@
     <div class="modal-body">
       <p>Let’s get this conversation started. Tell us a bit about yourself, and we’ll get in touch as soon as we can.</p>
 
-      <form id="form" action="/index.html">
+      <form id="form" class="form">
         <div class="form-control">
-          <div>
             <label for="email">Work email</label>
-          </div>
-          <div>
             <input type="email" id="email" placeholder="Email address">
             <i class="fas fa-check-circle"></i>
 			      <i class="fas fa-exclamation-circle"></i>
 			      <small>Error message</small>
-          </div>
         </div>
 
         <div class="form-control">
-          <div>
             <label for="message">Message</label>
-          </div>
-          <div>
             <textarea id="message" name="message" placeholder="Type here" style="height:200px"></textarea>
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
-          </div>
         </div>
 
         <div class="form-control">
           <div class="col-50-left">
             <label for="lname">First Name</label>
-          </div>
-          <div class="col-50-right">
-            <label for="lname">Last Name</label>
-          </div>
-        </div>
-
-        <div class="form-control">
-          <div class="col-50-left">
             <input type="text" id="fname" name="firstname" placeholder="Your first name">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
           </div>
           <div class="col-50-right">
+            <label for="lname">Last Name</label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
@@ -74,21 +59,13 @@
         <div class="form-control">
           <div class="col-50-left">
             <label for="cname">Company name</label>
-          </div>
-          <div class="col-50-right">
-            <label for="cname">Number of employees</label>
-          </div>
-        </div>
-
-        <div class="form-control">
-          <div class="col-50-left">
             <input type="text" id="cname" name="companyname" placeholder="Your company name">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
           </div>
           <div class="col-50-right">
-
+            <label for="cname">Number of employees</label>
             <select type="select" id="employees" name="employees" placeholder="Select">
               <option value="volvo" selected disabled hidden>Select</option>
               <option value="volvo">5000+</option>
@@ -109,8 +86,6 @@
          <div class="form-control">
           <div>
             <label for="tel">Phone number</label>
-          </div>
-          <div>
             <input type="tel" id="phonenumber" name="phonenumber" placeholder="Type your phone number">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
@@ -132,6 +107,9 @@
             <label class="radio-inline">
               <input type="radio" name="optradio"> No
             </label>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
           </div>
         </div>
         
@@ -142,6 +120,8 @@
     </div>
   </div>
 </div>
+
+
 
 <script>
   // Modal beállítása JS-el
@@ -192,45 +172,45 @@ function checkInputs() {
   const phonenumberValue = phonenumber.value.trim();
 
 	if(emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
+		setErrorFor(email, 'Please enter your email address');
 	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Not a valid email');
+		setErrorFor(email, 'Please enter a valid email address');
 	} else {
 		setSuccessFor(email);
 	}
 
   if(message1Value === '') {
-		setErrorFor(message1, 'Message cannot be blank');
+		setErrorFor(message1, 'Please enter a message or question');
 	} else {
 		setSuccessFor(message1);
 	}
 	
 	
 	if(fnameValue === '') {
-		setErrorFor(fname, 'First Name cannot be blank');
+		setErrorFor(fname, 'Please enter your first name');
 	} else {
 		setSuccessFor(fname);
 	}
 
   if(lnameValue === '') {
-		setErrorFor(lname, 'Last Name cannot be blank');
+		setErrorFor(lname, 'Please enter your last name');
 	} else {
 		setSuccessFor(lname);
 	}
 	
 	if(cnameValue === '') {
-		setErrorFor(cname, 'Company cannot be blank');
+		setErrorFor(cname, 'Please enter your company name');
 	} else{
 		setSuccessFor(cname);
 	}
-  if(employeesValue === '') {
-		setErrorFor(employees, 'You must choose one');
+  if(employeesValue === 0) {
+		setErrorFor(employees, 'Please select number of employees');
 	} else{
 		setSuccessFor(employees);
 	}
 
   if(phonenumberValue === '') {
-		setErrorFor(phonenumber, 'Phone number cannot be blank');
+		setErrorFor(phonenumber, 'Please enter a valid phone number');
 	} else{
 		setSuccessFor(phonenumber);
 	}
@@ -252,9 +232,6 @@ function setSuccessFor(input) {
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
-
-
-
 
 </script>
 
