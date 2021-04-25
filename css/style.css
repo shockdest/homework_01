@@ -7,7 +7,7 @@
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -59,38 +59,6 @@ h2 {
   margin: 0 0 26px;
 }
 
-img {
-  max-width: 100%;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-ul,
-ol {
-  margin: 30px 0;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-a:link {
-  color: #ffa949;
-  text-decoration: none;
-}
-
-a:visited {
-  color: lightblue;
-}
-
-a:hover {
-  color: rgba(255, 169, 73, 0.4);
-}
-
-a:active {
-  color: lightcoral;
-}
-
 .main-header {
   padding-top: 170px;
   height: 400px;
@@ -104,10 +72,6 @@ a:active {
   border-radius: 8px;
 }
 
-header .contact-content h2 {
-  color: #80A503;
-}
-
 .contact-content {
   text-align: center;
   padding-top: 25px;
@@ -119,101 +83,9 @@ header .contact-content h2 {
   margin: auto;
 }
 
-.title {
-  color: white;
-  font-size: 30px;
-  letter-spacing: 6px;
-  font-weight: 200;
-  border-bottom: 2px solid;
-  padding-bottom: 10px;
-}
-
-.intro {
-  font-size: 26;
-  line-height: 1.6;
-}
-
-.primary-content,
-.main-header,
-.main-footer {
-  text-align: center;
-}
-
-.primary-content {
-  padding-top: 25px;
-  padding-bottom: 95px;
-}
-
-.secondary-content {
-  padding-top: 80px;
-  padding-bottom: 70px;
-  border-bottom: 2px solid #dfe2e6;
-}
-
-.main-footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  border-bottom: 10px solid #ffa949;
-}
-
-.t-border {
-  border-top: 2px solid #dfe2e6;
-}
-
-.primary-content,
-.secondary-content {
-  width: 75%;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin: auto;
-  max-width: 960px;
-}
-
-.wildlife {
-  color: white;
-  text-align: left;
-  padding: 18% 24%;
-  border-top: 10px solid #ffa949;
-  margin: 105px 0 60px;
-  background: #434a52 url("../img/bear.jpg") no-repeat center;
-  background-size: cover;
-  -webkit-box-shadow: inset 0 0 50px 10px rgba(0, 0, 0, 0.8);
-          box-shadow: inset 0 0 50px 10px rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-}
-
-.arrow {
-  width: 50px;
-  margin-top: 150px;
-}
-
-.resorts,
-.tips {
-  width: 46.5%;
-}
-
-.tips {
-  float: left;
-}
-
-.resorts {
-  float: right;
-}
-
-.group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .contact-title {
   text-align: center;
   padding-top: 30px;
-}
-
-.contact-secondary-title {
-  padding-left: 70px;
-  padding-right: 70px;
 }
 
 .modal {
@@ -237,7 +109,7 @@ header .contact-content h2 {
   border: 1px solid #888;
   width: 55%;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
@@ -322,7 +194,7 @@ input[type=text], input[type=tel], input[type=email], select, textarea {
 }
 
 input[type=text]:hover, input[type=tel]:hover, input[type=email]:hover, select:hover, textarea:hover {
-  border: 1px solid #2d7e85;
+  border: 1px solid #0f3336;
 }
 
 label {
@@ -355,5 +227,73 @@ input[type=submit]:hover {
   float: right;
   width: 49%;
   padding: 0px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 1px solid black;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control textarea {
+  border: 1px solid black;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control.success input, .form-control.success textarea, .form-control.success select {
+  border-color: #2ecc71;
+}
+
+.form-control.error input, .form-control.error textarea, .form-control.error select {
+  border-color: #b60000;
+}
+
+.form-control i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+  color: #b60000;
+  visibility: visible;
+}
+
+.form-control small {
+  color: #b60000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
 }
 /*# sourceMappingURL=style.css.map */

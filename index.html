@@ -28,7 +28,7 @@
             <input type="email" id="email" placeholder="Email address">
             <i class="fas fa-check-circle"></i>
 			      <i class="fas fa-exclamation-circle"></i>
-			      <small>Error message</small>
+			      <small></small>
         </div>
 
         <div class="form-control">
@@ -36,7 +36,7 @@
             <textarea id="message" name="message" placeholder="Type here" style="height:200px"></textarea>
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small></small>
         </div>
 
         <div class="form-control">
@@ -45,14 +45,14 @@
             <input type="text" id="fname" name="firstname" placeholder="Your first name">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small></small>
           </div>
           <div class="col-50-right">
             <label for="lname">Last Name</label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small></small>
           </div>
         </div>
 
@@ -62,12 +62,12 @@
             <input type="text" id="cname" name="companyname" placeholder="Your company name">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small></small>
           </div>
           <div class="col-50-right">
             <label for="cname">Number of employees</label>
             <select type="select" id="employees" name="employees" placeholder="Select">
-              <option value="volvo" selected disabled hidden>Select</option>
+              <option value="noselect" selected disabled hidden>Select</option>
               <option value="volvo">5000+</option>
               <option value="saab">1000-4999</option>
               <option value="opel">500-999</option>
@@ -79,7 +79,7 @@
             </select>
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small></small>
 
         </div>
       </div>
@@ -89,18 +89,14 @@
             <input type="tel" id="phonenumber" name="phonenumber" placeholder="Type your phone number">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small></small>
           </div>
         </div>
 
         <div class="form-control">
           <div>
-            <label for="bonus"><small>Please also send me occasional emails about Zendesk products and services. (You can unsubscribe at any time.)</small></label>
+            <label for="bonus">Please also send me occasional emails about Zendesk products and services. (You can unsubscribe at any time.)</label>
           </div>
-        </div>
-
-        <div class="form-control">
-          <div>
             <label class="radio-inline">
               <input type="radio" name="optradio"> Yes
             </label>
@@ -109,9 +105,8 @@
             </label>
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small></small>
           </div>
-        </div>
         
         <div class="form-control">
           <input class="button button__long" type="submit" value="Contact Sales">
@@ -146,7 +141,6 @@ window.onclick = function(event) {
 }
 
 
-
 const form = document.getElementById('form');
 const email = document.getElementById('email');
 const message1 = document.getElementById('message');
@@ -168,6 +162,7 @@ function checkInputs() {
 	const fnameValue = fname.value.trim();
 	const lnameValue = lname.value.trim();
   const cnameValue = cname.value.trim();
+	const employeesValue = employees.value.trim();
   const phonenumberValue = phonenumber.value.trim();
 
 	if(emailValue === '') {
@@ -202,7 +197,7 @@ function checkInputs() {
 	} else{
 		setSuccessFor(cname);
 	}
-  if(employeesValue === 0) {
+  if(employeesValue === "noselect") {
 		setErrorFor(employees, 'Please select number of employees');
 	} else{
 		setSuccessFor(employees);
@@ -216,18 +211,21 @@ function checkInputs() {
 
 }
 
+
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
 	formControl.className = 'form-control error';
 	small.innerText = message;
+  // formControl.style.color= 'red';
 }
 
 function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form-control success';
 }
-	
+
+
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
